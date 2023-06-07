@@ -1,5 +1,4 @@
 <?php
-header("Cache-Control: no-cache, must-revalidate");
 require "option-object.php"
 ?>
 <!DOCTYPE html>
