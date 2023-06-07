@@ -10,6 +10,11 @@ require "option-object.php"
     <title>Document</title>
 </head>
 <body>
+     <header>
+        <nav>
+            <a href="index.php">table page</a>
+        </nav>
+    </header>
    <form action="form-auth.php" method="post"> 
         <input type="number" name="amount" placeholder="Insert amount">
             <label for="src-crncy">Source currency</label>
