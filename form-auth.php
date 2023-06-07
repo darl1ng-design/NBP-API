@@ -2,7 +2,14 @@
 require "conn.php";
     class currencyConvert{
         public function convert($amount, $source_code, $target_code, $conn, bool $mode){
-            $message = '';
+         $message = '';
+
+        //checking for empty form values; 
+        if(empty($amount) || empty($source_code) || empty($target_code)){
+            $message = 'cant insert empty values';
+            echo $message;
+            exit;
+        }
         //fetching mid column data from db with code column values selected in form 
             $select = "SELECT mid from kursy where code LIKE '".$source_code."' || code LIKE '".$target_code."';";
             $select_res = $conn->query($select);
@@ -15,17 +22,12 @@ require "conn.php";
         $src_val = ($amount*$list[0]);
         //$trgt_val is converted value
         $trgt_val = ($src_val*$list[1]); 
-        
-        //checking for empty form values; 
-        if(empty($amount) || empty($source_code) || empty($target_code)){
-            $message = 'cant insert empty values';
-            echo $message;
-        }
-
+            
         //checking for the same currency value
-        elseif($source_code == $target_code){
+        if($source_code == $target_code){
             $message = 'cant convert the same currency';
             echo $message;
+            exit; 
         }
         //inserting the source, target currencies, initial value to convert and the converted value info to database
         elseif($mode == true){
