@@ -13,7 +13,7 @@ require "exchange.php";
 <body style="text-align:center; display:flex; justify-content:center ;flex-direction:column">
     <header>
         <nav>
-            <a href="test-form.php">form page</a>
+            <a href="form.php">form page</a>
         </nav>
     </header>
 <?php
