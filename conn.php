@@ -1,7 +1,7 @@
 <?php
-    $password = '';
-    $username = 'root';
-    $db = 'kursy';
+    $password = 'Zadanie123@';
+    $username = 'id20880124_zadanie';
+    $db = 'id20880124_kursy';
     $server = 'localhost';
 
     //creating connection to the localhost database
