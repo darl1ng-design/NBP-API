@@ -35,9 +35,9 @@ require "conn.php";
             $insert = "INSERT INTO kursy (currency, code, mid) values ('".$currency."', '".$code."', '".$mid."')";
             $queryres = $conn->query($insert);
             $msg = 'records has been added';
-            echo $msg;
             }
         }
+        echo $msg;
         return $list;    
     }
 }
