@@ -1,5 +1,6 @@
 <?php
 require "create-table.php";
+require "exchange.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
