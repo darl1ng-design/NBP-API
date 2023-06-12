@@ -29,12 +29,17 @@ require "conn.php";
             echo $message;
             exit; 
         }
+        //inserted amount values cannot be less or equal to zero
+        elseif($amount <= 0){
+            $message = 'amount cannot be smaller than 0';
+            echo $message; 
+            exit;
+        }
         //inserting the source, target currencies, initial value to convert and the converted value info to database
         elseif($mode == true){
             $insert = "INSERT INTO przewalutowania (source_val, target_val, value_to_convert, converted_value) values ('".$source_code."', '".$target_code."', '".$src_val."', '".$trgt_val."');";
             $insert_result = $conn->query($insert);
-        }
-    
+        }    
     }
 
     //function to output the latest records containing previously inserted data to przewalutowania table
